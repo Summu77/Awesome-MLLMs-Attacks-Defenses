@@ -1,2 +1,2 @@
 # Awesome-Multimodal-Attacks-
-A collection of research papers and resources on adversarial attacks, jailbreaks, and backdoor attacks in multimodal AI systems.
+A collection of research papers, code, and resources on attacks and defenses in multimodal AI systems.
