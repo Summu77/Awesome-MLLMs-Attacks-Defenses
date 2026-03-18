@@ -2,12 +2,13 @@ import { defenseGroups } from "./data/defenses.js";
 import { sectionMeta } from "./data/sections.js";
 import { renderShell } from "./modules/site-shell.js";
 import {
+  applyTimeMode,
   filterPapers,
   initExpandablePaperGroups,
   isPreprintPaper,
   renderExpandableBuckets,
-  sortPapers,
-  uniquePublications
+  uniquePublications,
+  uniqueYears
 } from "./modules/ui.js";
 
 const page = document.body.dataset.page;
@@ -22,15 +23,23 @@ document.querySelector("#page-description").remove();
 
 const publicationFilter = document.querySelector("#publication-filter");
 const sortFilter = document.querySelector("#sort-filter");
+const viewFilter = document.querySelector("#view-filter");
 const searchInput = document.querySelector("#search-input");
 const categoryNav = document.querySelector("#defense-category-nav");
 const defenseSections = document.querySelector("#defense-sections");
 const emptyState = document.querySelector("#empty-state");
+const viewStorageKey = "paper-view:defenses";
 
 const allDefensePapers = defenseGroups.flatMap((group) => group.papers);
 
+viewFilter.value = localStorage.getItem(viewStorageKey) || "cards";
+
 publicationFilter.innerHTML += uniquePublications(allDefensePapers)
   .map((publication) => `<option value="${publication}">${publication}</option>`)
+  .join("");
+
+sortFilter.innerHTML += uniqueYears(allDefensePapers)
+  .map((year) => `<option value="${year}">${year}</option>`)
   .join("");
 
 function renderCategoryNav(filteredGroups) {
@@ -87,13 +96,18 @@ function renderPaperBuckets(group) {
     }
   ];
 
-  return renderExpandableBuckets(buckets, { sectionLabel: group.shortTitle, limit: 10 });
+  return renderExpandableBuckets(buckets, {
+    sectionLabel: group.shortTitle,
+    limit: 10,
+    viewMode: viewFilter.value
+  });
 }
 
 function renderPage() {
+  defenseSections.dataset.viewMode = viewFilter.value;
   const filteredGroups = defenseGroups.map((group) => ({
     ...group,
-    papers: sortPapers(
+    papers: applyTimeMode(
       filterPapers(group.papers, searchInput.value, publicationFilter.value),
       sortFilter.value
     )
@@ -109,4 +123,8 @@ function renderPage() {
 searchInput.addEventListener("input", renderPage);
 publicationFilter.addEventListener("change", renderPage);
 sortFilter.addEventListener("change", renderPage);
+viewFilter.addEventListener("change", () => {
+  localStorage.setItem(viewStorageKey, viewFilter.value);
+  renderPage();
+});
 renderPage();

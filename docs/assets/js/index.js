@@ -68,7 +68,7 @@ if (sectionGrid) {
 
 if (featuredGrid) {
   featuredGrid.innerHTML = sortPapers(allPapers, "newest")
-    .slice(0, 6)
+    .slice(0, 10)
     .map((paper) => createPaperCard(paper, sectionMeta[paper.section].title))
     .join("");
 }

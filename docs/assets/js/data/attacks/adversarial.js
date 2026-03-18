@@ -111,5 +111,13 @@ link: "https://arxiv.org/abs/2602.19418"
   publishedAt: "2024-09",
   link: "https://openreview.net/forum?id=gDpWYpocE1"
 },
+{
+  title: "VEAttack: Downstream-agnostic Vision Encoder Attack against Large Vision Language Models",
+  institutions: ["City University of Hong Kong"],
+  publication: "ICLR 2026",
+  publishedAt: "2025-05",
+  link: "https://arxiv.org/abs/2505.17440"
+},
+
 
 ];

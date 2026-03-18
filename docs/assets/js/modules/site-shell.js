@@ -15,7 +15,7 @@ export function renderShell(currentPage) {
       <div class="site-header">
         <a class="brand" href="./index.html" aria-label="Go to homepage">
           <span class="brand-mark">GitHub Pages</span>
-          <span class="brand-name">Multimodal Safety Papers</span>
+          <span class="brand-name">Safety Papers for Multimodal Large Language Models</span>
         </a>
         <nav class="site-nav" aria-label="Main navigation">
           ${navigation

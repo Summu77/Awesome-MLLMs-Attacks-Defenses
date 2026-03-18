@@ -78,8 +78,10 @@ code {
 
 .brand-name {
   font-family: "Cormorant Garamond", serif;
-  font-size: 2rem;
-  line-height: 0.95;
+  font-size: clamp(0.9rem, 1.25vw, 1.15rem);
+  line-height: 1;
+  max-width: none;
+  white-space: nowrap;
 }
 
 .site-nav {
@@ -162,6 +164,10 @@ h1 {
   font-size: clamp(3rem, 7vw, 5rem);
   line-height: 0.92;
   max-width: 10ch;
+}
+
+.hero-copy h1 {
+  max-width: 16ch;
 }
 
 h2 {
@@ -432,6 +438,10 @@ h3 {
   display: none;
 }
 
+.expandable-paper-group:not(.expanded) .paper-row-collapsed {
+  display: none;
+}
+
 .expandable-paper-group:not(.expanded) .bucket-hidden-until-expand {
   display: none;
 }
@@ -551,7 +561,11 @@ h3 {
 
 .filter-shell {
   display: grid;
-  grid-template-columns: minmax(0, 1.8fr) minmax(220px, 0.8fr) minmax(200px, 0.8fr);
+  grid-template-columns:
+    minmax(0, 1.7fr)
+    minmax(220px, 0.8fr)
+    minmax(200px, 0.8fr)
+    minmax(180px, 0.7fr);
   gap: 1rem;
   border-radius: var(--radius-md);
   padding: 1rem;
@@ -583,6 +597,68 @@ h3 {
   background: rgba(255, 255, 255, 0.72);
   color: var(--ink);
   font: inherit;
+}
+
+.paper-table-shell {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(31, 43, 60, 0.08);
+  box-shadow: 0 16px 34px rgba(31, 43, 60, 0.06);
+}
+
+.paper-table {
+  width: 100%;
+  min-width: 880px;
+  border-collapse: collapse;
+}
+
+.paper-table th,
+.paper-table td {
+  padding: 0.95rem 1rem;
+  border-bottom: 1px solid rgba(31, 43, 60, 0.08);
+  text-align: left;
+  vertical-align: top;
+}
+
+.paper-table th {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  font-weight: 800;
+  background: rgba(247, 243, 236, 0.92);
+}
+
+.paper-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.paper-table-title {
+  min-width: 280px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.45;
+}
+
+.paper-table-type {
+  width: 120px;
+}
+
+.table-badge {
+  white-space: nowrap;
+}
+
+.paper-table-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(58, 93, 112, 0.08);
+  color: var(--accent-2);
+  font-weight: 800;
+  white-space: nowrap;
 }
 
 .principle-grid {

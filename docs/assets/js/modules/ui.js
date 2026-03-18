@@ -26,6 +26,34 @@ export function createPaperCard(paper, sectionLabel = "", extraClassName = "") {
   `;
 }
 
+export function createPaperTable(papers, sectionLabel = "") {
+  if (papers.length === 0) {
+    return "";
+  }
+
+  const showType = Boolean(sectionLabel);
+
+  return `
+    <div class="paper-table-shell">
+      <table class="paper-table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Institutions</th>
+            <th>Published</th>
+            <th>Publication</th>
+            ${showType ? "<th>Type</th>" : ""}
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${papers.map((paper) => createPaperTableRow(paper, sectionLabel)).join("")}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
 export function initExpandablePaperGroups() {
   if (document.body.dataset.expandablePaperGroupsBound === "true") {
     return;
@@ -56,7 +84,7 @@ export function isPreprintPaper(paper) {
 }
 
 export function renderExpandableBuckets(buckets, options = {}) {
-  const { sectionLabel = "", limit = 10 } = options;
+  const { sectionLabel = "", limit = 10, viewMode = "cards" } = options;
   const nonEmptyBuckets = buckets.filter((bucket) => bucket.papers.length > 0);
   const total = nonEmptyBuckets.reduce((sum, bucket) => sum + bucket.papers.length, 0);
   let remainingVisible = total > limit ? limit : Number.POSITIVE_INFINITY;
@@ -74,6 +102,10 @@ export function renderExpandableBuckets(buckets, options = {}) {
         visiblePapers.length === 0 && hiddenPapers.length > 0
           ? "paper-bucket bucket-hidden-until-expand"
           : "paper-bucket";
+      const content =
+        viewMode === "table"
+          ? renderTableBucketContent(visiblePapers, hiddenPapers, sectionLabel)
+          : renderCardBucketContent(visiblePapers, hiddenPapers, sectionLabel);
 
       return `
         <section class="${bucketClass}">
@@ -81,12 +113,7 @@ export function renderExpandableBuckets(buckets, options = {}) {
             <h3>${bucket.title}</h3>
             <span class="section-count">${bucket.papers.length}</span>
           </div>
-          <div class="paper-grid">
-            ${visiblePapers.map((paper) => createPaperCard(paper, sectionLabel)).join("")}
-            ${hiddenPapers
-              .map((paper) => createPaperCard(paper, sectionLabel, "paper-card-collapsed"))
-              .join("")}
-          </div>
+          ${content}
         </section>
       `;
     })
@@ -150,21 +177,42 @@ export function sortPapers(items, sortMode = "newest") {
   return sorted;
 }
 
+export function uniqueYears(items) {
+  return [...new Set(items.map((item) => extractPublishedYear(item.publishedAt)).filter(Boolean))]
+    .sort((left, right) => Number(right) - Number(left));
+}
+
+export function applyTimeMode(items, timeMode = "newest") {
+  if (timeMode === "oldest" || timeMode === "newest") {
+    return sortPapers(items, timeMode);
+  }
+
+  if (/^\d{4}$/.test(timeMode)) {
+    return sortPapers(
+      items.filter((paper) => extractPublishedYear(paper.publishedAt) === timeMode),
+      "newest"
+    );
+  }
+
+  return sortPapers(items, "newest");
+}
+
 export function papersByYear(items, year) {
   return items.filter((paper) => String(paper.publishedAt || "").startsWith(String(year)));
 }
 
 export function uniquePublications(items) {
-  return [...new Set(items.map((item) => item.publication))].sort((a, b) =>
-    b.localeCompare(a)
-  );
+  return [...new Set(items.map((item) => publicationCategory(item.publication)).filter(Boolean))]
+    .sort((a, b) => a.localeCompare(b));
 }
 
 export function filterPapers(items, searchText, publication) {
   const query = searchText.trim().toLowerCase();
 
   return items.filter((paper) => {
-    const matchesPublication = publication ? paper.publication === publication : true;
+    const matchesPublication = publication
+      ? publicationCategory(paper.publication) === publication
+      : true;
     const institutionText = getInstitutions(paper).join(" ");
     const haystack = [
       paper.title,
@@ -189,6 +237,25 @@ function parsePublishedAt(value) {
   return Number.isNaN(date.getTime()) ? 0 : date.getTime();
 }
 
+function extractPublishedYear(value) {
+  const year = String(value || "").trim().slice(0, 4);
+  return /^\d{4}$/.test(year) ? year : "";
+}
+
+function publicationCategory(value) {
+  const raw = String(value || "").trim();
+
+  if (!raw) {
+    return "";
+  }
+
+  return raw
+    .replace(/\b(19|20)\d{2}\b/g, "")
+    .replace(/[\s/,-]+$/g, "")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+}
+
 function getInstitutions(paper) {
   if (Array.isArray(paper.institutions)) {
     return paper.institutions.filter(Boolean);
@@ -207,4 +274,63 @@ function getInstitutions(paper) {
   }
 
   return ["Unknown"];
+}
+
+function createPaperTableRow(paper, sectionLabel = "", extraClassName = "") {
+  const institutions = getInstitutions(paper);
+  const rowClassName = ["paper-row", extraClassName].filter(Boolean).join(" ");
+  const typeCell = sectionLabel
+    ? `<td class="paper-table-type"><span class="paper-badge table-badge">${sectionLabel}</span></td>`
+    : "";
+
+  return `
+    <tr class="${rowClassName}">
+      <td class="paper-table-title">${paper.title}</td>
+      <td>${institutions.join("; ")}</td>
+      <td>${formatPublishedAt(paper.publishedAt)}</td>
+      <td>${paper.publication}</td>
+      ${typeCell}
+      <td>
+        <a class="paper-table-link" href="${paper.link}" target="_blank" rel="noreferrer">Open</a>
+      </td>
+    </tr>
+  `;
+}
+
+function renderCardBucketContent(visiblePapers, hiddenPapers, sectionLabel) {
+  return `
+    <div class="paper-grid">
+      ${visiblePapers.map((paper) => createPaperCard(paper, sectionLabel)).join("")}
+      ${hiddenPapers
+        .map((paper) => createPaperCard(paper, sectionLabel, "paper-card-collapsed"))
+        .join("")}
+    </div>
+  `;
+}
+
+function renderTableBucketContent(visiblePapers, hiddenPapers, sectionLabel) {
+  const showType = Boolean(sectionLabel);
+
+  return `
+    <div class="paper-table-shell">
+      <table class="paper-table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Institutions</th>
+            <th>Published</th>
+            <th>Publication</th>
+            ${showType ? "<th>Type</th>" : ""}
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${visiblePapers.map((paper) => createPaperTableRow(paper, sectionLabel)).join("")}
+          ${hiddenPapers
+            .map((paper) => createPaperTableRow(paper, sectionLabel, "paper-row-collapsed"))
+            .join("")}
+        </tbody>
+      </table>
+    </div>
+  `;
 }
