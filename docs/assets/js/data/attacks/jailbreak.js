@@ -20,7 +20,7 @@ export const jailbreakAttacks = [
   institutions: ["University of California"],
   publication: "ICLR 2024",
   publishedAt: "2023-07",
-  Tag: [],
+  Tag: ["Gradient-based Adversarial Attack","Single Image Modal"],
   link: "https://arxiv.org/abs/2307.14539"
 },
 {
@@ -60,8 +60,31 @@ export const jailbreakAttacks = [
   institutions: ["Zhipu AI","Tsinghua University","Beihang University"],
   publication: "ACM MM 2025",
   publishedAt: "2025-08",
-  Tag: ["Adversarial Perturbation","Image & Text Modal"],
+  Tag: ["Gradient-based Adversarial Attack","Image & Text Modal"],
   link: "https://arxiv.org/abs/2508.05087"
 },
-
+{
+  title: "Images are Achilles' Heel of Alignment: Exploiting Visual Vulnerabilities for Jailbreaking Multimodal Large Language Models",
+  institutions: ["Renmin University of China"],
+  publication: "ECCV 2024",
+  publishedAt: "2024-03",
+  Tag: ["Generative Attack","Single Image Modal"],
+  link: "https://arxiv.org/abs/2403.09792"
+},
+{
+  title: "Playing the Fool: Jailbreaking LLMs and Multimodal LLMs with Out-of-Distribution Strategy",
+  institutions: ["Korea Advanced Institute of Science and Technology"],
+  publication: "CVPR 2025",
+  publishedAt: "2025-03",
+  Tag: ["Out-of-Distribution Exploitation","Image & Text Modal"],
+  link: "https://arxiv.org/abs/2503.20823"
+},
+{
+  title: "Distraction is All You Need for Multimodal Large Language Model Jailbreaking",
+  institutions: ["Guangzhou University","Shanghai Jiao Tong University","The University of Adelaide"],
+  publication: "CVPR 2025",
+  publishedAt: "2025-02",
+  Tag: ["Cross-Modal Attention Manipulation","Image & Text Modal"],
+  link: "https://arxiv.org/abs/2502.10794"
+},
 ];
