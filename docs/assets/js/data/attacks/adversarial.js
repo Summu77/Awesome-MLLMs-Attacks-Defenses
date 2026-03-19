@@ -231,4 +231,44 @@ link: "https://arxiv.org/abs/2602.19418"
   Tag: ["VLP","UAP"],
   link: "https://openaccess.thecvf.com/content/ICCV2025/html/Fang_One_Perturbation_is_Enough_On_Generating_Universal_Adversarial_Perturbations_against_ICCV_2025_paper.html"
 },
+{
+  title: "Boosting adversarial transferability in vision-language models via multimodal feature heterogeneity",
+  institutions: ["Guizhou University"],
+  publication: "Scientific Reports 2025",
+  publishedAt: "2025-03",
+  Tag: [],
+  link: "https://www.nature.com/articles/s41598-025-91802-6"
+},
+{
+  title: "Modality-Specific Interactive Attack for Vision-Language Pre-Training Models",
+  institutions: ["Nanjing University of Science and Technology"],
+  publication: "TIFS 2025",
+  publishedAt: "2025-05",
+  Tag: ["VLP"],
+  link: "https://ieeexplore.ieee.org/abstract/document/11018132"
+},
+{
+  title: "Towards Highly Transferable Vision-Language Attack via Semantic-Augmented Dynamic Contrastive Interaction",
+  institutions: ["Jiangnan University"],
+  publication: "CVPR 2026",
+  publishedAt: "2026-03",
+  Tag: [],
+  link: "https://arxiv.org/abs/2603.04839"
+},
+{
+  title: "Pushing the Frontier of Black-Box LVLM Attacks via Fine-Grained Detail Targeting",
+  institutions: ["MBZUAI"],
+  publication: "arXiv 2026",
+  publishedAt: "2026-02",
+  Tag: ["Black-box"],
+  link: "https://vila-lab.github.io/M-Attack-V2-Website/"
+},
+{
+  title: "Generating Transferable Attacks across Large Vision-Language Models using Adversarial Deformation Learning",
+  institutions: ["Wuhan University"],
+  publication: "PR 2026",
+  publishedAt: "2026-02",
+  Tag: [],
+  link: "https://www.sciencedirect.com/science/article/abs/pii/S0031320326001597"
+},
 ];
