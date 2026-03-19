@@ -100,26 +100,36 @@ export function isPreprintPaper(paper) {
 export function renderExpandableBuckets(buckets, options = {}) {
   const { sectionLabel = "", limit = 10, viewMode = "cards" } = options;
   const nonEmptyBuckets = buckets.filter((bucket) => bucket.papers.length > 0);
-  const total = nonEmptyBuckets.reduce((sum, bucket) => sum + bucket.papers.length, 0);
-  let remainingVisible = total > limit ? limit : Number.POSITIVE_INFINITY;
 
   const sections = nonEmptyBuckets
     .map((bucket) => {
-      const visibleCount = Math.min(bucket.papers.length, remainingVisible);
+      const visibleCount = Math.min(bucket.papers.length, limit);
       const hiddenCount = bucket.papers.length - visibleCount;
       const visiblePapers = bucket.papers.slice(0, visibleCount);
       const hiddenPapers = bucket.papers.slice(visibleCount);
-
-      remainingVisible = Math.max(remainingVisible - visibleCount, 0);
-
-      const bucketClass =
-        visiblePapers.length === 0 && hiddenPapers.length > 0
-          ? "paper-bucket bucket-hidden-until-expand"
-          : "paper-bucket";
+      const bucketClass = ["paper-bucket", hiddenCount > 0 ? "expandable-paper-group" : ""]
+        .filter(Boolean)
+        .join(" ");
       const content =
         viewMode === "table"
           ? renderTableBucketContent(visiblePapers, hiddenPapers, sectionLabel)
           : renderCardBucketContent(visiblePapers, hiddenPapers, sectionLabel);
+      const toggle =
+        hiddenCount > 0
+          ? `
+              <div class="paper-expand-actions">
+                <button
+                  class="paper-expand-toggle"
+                  type="button"
+                  data-action="toggle-paper-group"
+                  data-more-label="Show more (${hiddenCount})"
+                  data-less-label="Show less"
+                >
+                  Show more (${hiddenCount})
+                </button>
+              </div>
+            `
+          : "";
 
       return `
         <section class="${bucketClass}">
@@ -128,29 +138,13 @@ export function renderExpandableBuckets(buckets, options = {}) {
             <span class="section-count">${bucket.papers.length}</span>
           </div>
           ${content}
+          ${toggle}
         </section>
       `;
     })
     .join("");
 
-  const toggle =
-    total > limit
-      ? `
-          <div class="paper-expand-actions">
-            <button
-              class="paper-expand-toggle"
-              type="button"
-              data-action="toggle-paper-group"
-              data-more-label="Show more (${total - limit})"
-              data-less-label="Show less"
-            >
-              Show more (${total - limit})
-            </button>
-          </div>
-        `
-      : "";
-
-  return `<div class="expandable-paper-group">${sections}${toggle}</div>`;
+  return sections;
 }
 
 export function formatPublishedAt(value) {
