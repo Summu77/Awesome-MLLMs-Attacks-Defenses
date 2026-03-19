@@ -47,5 +47,13 @@ export const jailbreakAttacks = [
   Tag: [],
   link: "https://aclanthology.org/2025.acl-long.475/"
 },
+{
+  title: "FigStep: Jailbreaking Large Vision-Language Models via Typographic Visual Prompts",
+  institutions: ["Tsinghua University","Zhongguancun Laboratory","Shandong Institute of Blockchain","Shandong University"],
+  publication: "AAAI 2025",
+  publishedAt: "2023-11",
+  Tag: [],
+  link: "https://arxiv.org/abs/2311.05608"
+},
 
 ];
