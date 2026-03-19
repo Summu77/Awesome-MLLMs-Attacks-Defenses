@@ -44,7 +44,7 @@ title: "PA-Attack: Guiding Gray-Box Attacks on LVLM Vision Encoders with Prototy
 institutions: ["City University of Hong Kong"],
 publication: "CVPR 2026",
 publishedAt: "2026-02",
-Tag: [],
+Tag: ["Gray-box"],
 link: "https://arxiv.org/abs/2602.19418"
 },
 {
@@ -151,5 +151,84 @@ link: "https://arxiv.org/abs/2602.19418"
   Tag: ["VLA"],
   link: "https://openreview.net/forum?id=jmLCBLeEC4"
 },
-
+{
+  title: "Chain of Attack: On the Robustness of Vision-Language Models Against Transfer-Based Adversarial Attacks",
+  institutions: ["The Hong Kong University of Science and Technology"],
+  publication: "CVPR 2025",
+  publishedAt: "2024-11",
+  Tag: ["Black-box"],
+  link: "https://openaccess.thecvf.com/content/CVPR2025/html/Xie_Chain_of_Attack_On_the_Robustness_of_Vision-Language_Models_Against_CVPR_2025_paper.html"
+},
+{
+  title: "A unified understanding of adversarial vulnerability regarding unimodal models and vision-language pre-training models",
+  institutions: ["Northwestern Polytechnical University"],
+  publication: "MM 2024",
+  publishedAt: "2024-07",
+  Tag: ["VLP"],
+  link: "https://dl.acm.org/doi/abs/10.1145/3664647.3681184"
+},
+{
+  title: "Reinforcement and Complementary Space Search for Multimodal Black-Box Attack",
+  institutions: ["Tianjin University"],
+  publication: "TMM 2026",
+  publishedAt: "2026-02",
+  Tag: ["Black-box"],
+  link: "https://ieeexplore.ieee.org/abstract/document/11397224/"
+},
+{
+  title: "GIGAS: Adversarial Attacks on Visual Question Answering with Multi-modal Generative Models",
+  institutions: ["Shanghai University"],
+  publication: "TCSVT 2026",
+  publishedAt: "2026-02",
+  Tag: [],
+  link: "https://ieeexplore.ieee.org/abstract/document/11395335/"
+},
+{
+  title: "Individual & Common Attack: Enhancing Transferability in VLP Models through Modal Feature Exploitation",
+  institutions: ["Zhejiang University of Science and Technology"],
+  publication: "TIP 2026",
+  publishedAt: "2026-01",
+  Tag: ["VLP"],
+  link: "https://ieeexplore.ieee.org/abstract/document/11364100/"
+},
+{
+  title: "CoGA: A Collaborative Gray-Box Adversarial Attack for Multimodal Language Models",
+  institutions: ["Zhejiang University"],
+  publication: "TIFS 2025",
+  publishedAt: "2025-12",
+  Tag: ["Gray-box"],
+  link: "https://ieeexplore.ieee.org/abstract/document/11310831/"
+},
+{
+  title: "Towards adversarial attack on vision-language pre-training models",
+  institutions: ["Beijing Jiaotong University"],
+  publication: "MM 2022",
+  publishedAt: "2022-10",
+  Tag: ["VLP"],
+  link: "https://dl.acm.org/doi/abs/10.1145/3503161.3547801"
+},
+{
+  title: "Set-level guidance attack: Boosting adversarial transferability of vision-language pre-training models",
+  institutions: ["Southern University of Science and Technology"],
+  publication: "ICCV 2023",
+  publishedAt: "2023-07",
+  Tag: ["VLP"],
+  link: "http://openaccess.thecvf.com/content/ICCV2023/html/Lu_Set-level_Guidance_Attack_Boosting_Adversarial_Transferability_of_Vision-Language_Pre-training_Models_ICCV_2023_paper.html"
+},
+{
+  title: "Boosting transferability in vision-language attacks via diversification along the intersection region of adversarial trajectory",
+  institutions: ["Nankai University"],
+  publication: "ECCV 2024",
+  publishedAt: "2024-07",
+  Tag: ["VLP"],
+  link: "https://link.springer.com/chapter/10.1007/978-3-031-72998-0_25"
+},
+{
+  title: "One Perturbation is Enough: On Generating Universal Adversarial Perturbations against Vision-Language Pre-training Models",
+  institutions: ["Tsinghua University"],
+  publication: "ICCV 2025",
+  publishedAt: "2024-06",
+  Tag: ["VLP","UAP"],
+  link: "https://openaccess.thecvf.com/content/ICCV2025/html/Fang_One_Perturbation_is_Enough_On_Generating_Universal_Adversarial_Perturbations_against_ICCV_2025_paper.html"
+},
 ];

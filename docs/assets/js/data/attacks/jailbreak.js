@@ -47,4 +47,5 @@ export const jailbreakAttacks = [
   Tag: [],
   link: "https://aclanthology.org/2025.acl-long.475/"
 },
+
 ];
