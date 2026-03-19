@@ -279,4 +279,12 @@ link: "https://arxiv.org/abs/2602.19418"
   Tag: [],
   link: "https://ieeexplore.ieee.org/abstract/document/11217326"
 },
+{
+  title: "How Robust is Google's Bard to Adversarial Image Attacks?",
+  institutions: ["Tsinghua University"],
+  publication: "arXiv 2023",
+  publishedAt: "2023-09",
+  Tag: [],
+  link: "https://arxiv.org/abs/2309.11751"
+},
 ];
