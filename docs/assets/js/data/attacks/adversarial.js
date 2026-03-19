@@ -284,7 +284,7 @@ link: "https://arxiv.org/abs/2602.19418"
   institutions: ["Tsinghua University"],
   publication: "arXiv 2023",
   publishedAt: "2023-09",
-  Tag: [],
+  Tag: ["Highly-cited"],
   link: "https://arxiv.org/abs/2309.11751"
 },
 ];

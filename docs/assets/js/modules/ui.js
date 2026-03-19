@@ -1,7 +1,10 @@
 export function createPaperCard(paper, sectionLabel = "", extraClassName = "") {
+  const badgeClassName = ["paper-badge", isHighlightedPaper(paper) ? "paper-badge-featured" : ""]
+    .filter(Boolean)
+    .join(" ");
   const badge = sectionLabel
-    ? `<span class="paper-badge">${sectionLabel}</span>`
-    : `<span class="paper-badge">Paper</span>`;
+    ? `<span class="${badgeClassName}">${sectionLabel}</span>`
+    : `<span class="${badgeClassName}">Paper</span>`;
   const cardClassName = ["paper-card", extraClassName].filter(Boolean).join(" ");
   const institutions = getInstitutions(paper);
   const tags = getTags(paper);
@@ -95,6 +98,21 @@ export function initExpandablePaperGroups() {
 
 export function isPreprintPaper(paper) {
   return String(paper.publication || "").trim().toLowerCase().startsWith("arxiv");
+}
+
+function normalizeMetaToken(value) {
+  return String(value || "")
+    .replace(/[\u200B-\u200D\uFEFF]/g, "")
+    .trim()
+    .toLowerCase();
+}
+
+function isHighlightedPaper(paper) {
+  const publication = normalizeMetaToken(paper.publication);
+  const tagTokens = getTags(paper).map(normalizeMetaToken);
+  const hasOralOrSpotlight = publication.includes("spotlight") || /\boral\b/.test(publication);
+  const hasHighlyCitedTag = tagTokens.includes("highly-cited") || tagTokens.includes("highly cited");
+  return hasOralOrSpotlight || hasHighlyCitedTag;
 }
 
 export function renderExpandableBuckets(buckets, options = {}) {

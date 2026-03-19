@@ -840,6 +840,12 @@ h3 {
   font-weight: 800;
 }
 
+.paper-badge-featured {
+  background: rgba(179, 92, 32, 0.18);
+  color: #b35c20;
+  box-shadow: inset 0 0 0 1px rgba(179, 92, 32, 0.16);
+}
+
 .paper-publication {
   font-size: 0.72rem;
   letter-spacing: 0.12em;

@@ -163,7 +163,7 @@ export const adversarialDefenses = [
 {
   title: "Enhancing Adversarial Robustness via Test-time Transformation Ensembling",
   institutions: ["King Abdullah University of Science and Technology"],
-  publication: "arXiv 2021",
+  publication: "ICCV 2021 workshop",
   publishedAt: "2021-07",
   Tag: ["Test-Time"],
   link: "https://arxiv.org/abs/2107.14110"
@@ -187,7 +187,7 @@ export const adversarialDefenses = [
 {
   title: "Enhancing Image Classification Robustness through Adversarial Sampling with Delta Data Augmentation (DDA)",
   institutions: ["Center for Research and Advanced Studies of the National Polytechnic Institute"],
-  publication: "CVPRW 2024",
+  publication: "CVPR 2024 workshop",
   publishedAt: "2024-06",
   Tag: ["Test-Time"],
   link: "https://doi.org/10.1109/cvprw63382.2024.00032"
