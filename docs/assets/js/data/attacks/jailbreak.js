@@ -87,4 +87,44 @@ export const jailbreakAttacks = [
   Tag: ["Cross-Modal Attention Manipulation","Image & Text Modal"],
   link: "https://arxiv.org/abs/2502.10794"
 },
+{
+  title: "Image Hijacks: Adversarial Images can Control Generative Models at Runtime",
+  institutions: ["Harvard University", "Cambridge University", "University of California, Berkeley"],
+  publication: "ICML 2024",
+  publishedAt: "2023-09",
+  Tag: [],
+  link: "https://arxiv.org/abs/2309.00236"
+},
+{
+  title: "Jailbreak Large Vision-Language Models Through Multi-Modal Linkage",
+  institutions: ["Chinese Academy of Sciences", "University of Chinese Academy of Sciences", "Tsinghua University", "Shanghai Qi Zhi Institute", "University of Chicago"],
+  publication: "ACL 2025",
+  publishedAt: "2024-12",
+  Tag: [],
+  link: "https://arxiv.org/abs/2412.00473"
+},
+{
+  title: "SceneTAP: Scene-Consistent Typographic Adversarial Planner against Vision-Language Models",
+  institutions: ["Nanyang Technological University"],
+  publication: "CVPR 2025",
+  publishedAt: "2024-12",
+  Tag: [],
+  link: "https://arxiv.org/abs/2412.00114"
+},
+{
+  title: "Jailbreaking Multimodal Large Language Models via Shuffle Inconsistency",
+  institutions: ["Beihang University"],
+  publication: "ICCV 2025",
+  publishedAt: "2025-01",
+  Tag: [],
+  link: "https://arxiv.org/abs/2501.04931"
+},
+{
+  title: "Jailbreaking MLLMs with Image-Driven Context Injection",
+  institutions: ["Shanghai Artificial Intelligence Laboratory","Purdue University"],
+  publication: "EMNLP 2025",
+  publishedAt: "2025-07",
+  Tag: [],
+  link: "https://arxiv.org/abs/2507.02844"
+},
 ];
