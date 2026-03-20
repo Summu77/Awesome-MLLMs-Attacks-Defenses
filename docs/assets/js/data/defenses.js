@@ -3,6 +3,7 @@ import { jailbreakDefenses } from "./defenses/jailbreak.js";
 import { backdoorDefenses } from "./defenses/backdoor.js";
 import { modelExtractionDefenses } from "./defenses/model-extraction.js";
 import { otherDefenses } from "./defenses/other.js";
+import { subtypeIntros } from "./subtype-intros.js";
 
 export const defenseCategoryMeta = {
   adversarial: {
@@ -41,26 +42,31 @@ export const defenseGroups = [
   {
     key: "adversarial",
     ...defenseCategoryMeta.adversarial,
+    intro: subtypeIntros.defenses.adversarial,
     papers: adversarialDefenses
   },
   {
     key: "jailbreak",
     ...defenseCategoryMeta.jailbreak,
+    intro: subtypeIntros.defenses.jailbreak,
     papers: jailbreakDefenses
   },
   {
     key: "backdoor",
     ...defenseCategoryMeta.backdoor,
+    intro: subtypeIntros.defenses.backdoor,
     papers: backdoorDefenses
   },
   {
     key: "modelExtraction",
     ...defenseCategoryMeta.modelExtraction,
+    intro: subtypeIntros.defenses.modelExtraction,
     papers: modelExtractionDefenses
   },
   {
     key: "other",
     ...defenseCategoryMeta.other,
+    intro: subtypeIntros.defenses.other,
     papers: otherDefenses
   }
 ];

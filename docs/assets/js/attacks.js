@@ -27,13 +27,17 @@ const categoryNav = document.querySelector("#attack-category-nav");
 const attackSections = document.querySelector("#attack-sections");
 const emptyState = document.querySelector("#empty-state");
 const viewStorageKey = "paper-view:attacks";
+const initialSearch = new URLSearchParams(window.location.search).get("search") || "";
+const initialCategoryKey = window.location.hash.startsWith("#category-")
+  ? window.location.hash.replace("#category-", "")
+  : "";
 let viewMode = localStorage.getItem(viewStorageKey) || "cards";
 
 const filterState = Object.fromEntries(
   attackGroups.map((group) => [
     group.key,
     {
-      search: "",
+      search: initialCategoryKey && initialCategoryKey !== group.key ? "" : initialSearch,
       publication: "",
       tag: "",
       sort: "newest"
@@ -85,6 +89,9 @@ function renderCategoryNav(filteredGroups) {
 
 function renderGroupSection(group) {
   const filters = filterState[group.key];
+  const intro = group.intro
+    ? `<p class="subsection-intro">${escapeHtml(group.intro)}</p>`
+    : "";
 
   return `
     <section class="subsection-block" id="category-${group.key}">
@@ -92,10 +99,8 @@ function renderGroupSection(group) {
         <div>
           <p class="eyebrow">Attack Subtype</p>
           <h2>${group.title}</h2>
+          ${intro}
         </div>
-        <p class="section-note">
-          <span class="grouping-note">Grouping rule: publications starting with "arXiv" are treated as preprints.</span>
-        </p>
       </div>
       <div class="filter-shell subtype-filter-shell" data-group-key="${group.key}">
         <div class="filter-field">

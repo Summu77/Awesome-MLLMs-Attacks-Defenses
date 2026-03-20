@@ -130,33 +130,38 @@ if (heroStats) {
     { label: "Total papers", value: allPapers.length },
     {
       label: "Attack papers",
-      value: collections.attacks.length
+      value: collections.attacks.length,
+      href: "./attacks.html"
     },
     {
       label: "Defense papers",
-      value: collections.defenses.length
+      value: collections.defenses.length,
+      href: "./defenses.html"
     },
     {
       label: "Evaluation papers",
-      value: collections.evaluations.length
+      value: collections.evaluations.length,
+      href: "./evaluations.html"
     },
     {
       label: "Analysis papers",
-      value: collections.analysis.length
+      value: collections.analysis.length,
+      href: "./analysis.html"
     },
     {
       label: "Survey papers",
-      value: collections.surveys.length
+      value: collections.surveys.length,
+      href: "./surveys.html"
     }
   ];
 
   heroStats.innerHTML = stats
     .map(
       (stat) => `
-        <article class="stat-card">
+        <${stat.href ? "a" : "article"} class="stat-card ${stat.href ? "stat-card-link" : ""}" ${stat.href ? `href="${stat.href}"` : ""}>
           <span class="stat-value">${stat.value}</span>
           <span class="stat-label">${stat.label}</span>
-        </article>
+        </${stat.href ? "a" : "article"}>
       `
     )
     .join("");
@@ -359,15 +364,18 @@ function renderInstitutionDistribution(scope) {
   institutionPie.style.background = buildPieGradient(chartData.entries, chartData.total);
   institutionLegend.innerHTML = chartData.entries
     .map(
-      (entry) => `
-        <article class="institution-legend-item">
+      (entry) => {
+        const href = buildInstitutionJumpUrl(scope, entry.name);
+        return `
+        <${href ? "a" : "article"} class="institution-legend-item ${href ? "institution-legend-link" : ""}" ${href ? `href="${href}"` : ""}>
           <span class="institution-legend-dot" style="background:${entry.color}"></span>
           <div class="institution-legend-copy">
             <strong>${entry.name}</strong>
             <span>${entry.count} mentions · ${entry.share}%</span>
           </div>
-        </article>
-      `
+        </${href ? "a" : "article"}>
+      `;
+      }
     )
     .join("");
 }
@@ -487,6 +495,36 @@ function summarizeInstitutions(papers) {
       share: total > 0 ? ((count / total) * 100).toFixed(1) : "0.0"
     }))
   };
+}
+
+function buildInstitutionJumpUrl(scope, institutionName) {
+  if (!institutionName || institutionName === "Others") {
+    return "";
+  }
+
+  const search = encodeURIComponent(institutionName);
+
+  if (scope.group.key === "attacks") {
+    return `./attacks.html?search=${search}#category-${scope.direction.key.replace(/^attack-/, "")}`;
+  }
+
+  if (scope.group.key === "defenses") {
+    return `./defenses.html?search=${search}#category-${scope.direction.key.replace(/^defense-/, "")}`;
+  }
+
+  if (scope.group.key === "evaluations") {
+    return `./evaluations.html?search=${search}`;
+  }
+
+  if (scope.group.key === "analysis") {
+    return `./analysis.html?search=${search}`;
+  }
+
+  if (scope.group.key === "surveys") {
+    return `./surveys.html?search=${search}`;
+  }
+
+  return "";
 }
 
 function summarizeTitleKeywords(papers) {

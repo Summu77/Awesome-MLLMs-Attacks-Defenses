@@ -287,4 +287,20 @@ link: "https://arxiv.org/abs/2602.19418"
   Tag: ["Highly-cited"],
   link: "https://arxiv.org/abs/2309.11751"
 },
+  {
+  title: "Geoshield: Safeguarding geolocation privacy from vision-language models via adversarial perturbations",
+  institutions: ["Institute of Information Engineering"],
+  publication: "AAAI 2026",
+  publishedAt: "2025-08",
+  Tag: ["Attack for Protection"],
+  link: "https://arxiv.org/abs/2508.03209"
+},
+{
+  title: "Artwork protection against unauthorized neural style transfer and aesthetic color distance metric",
+  institutions: ["University of St Andrews"],
+  publication: "PR 2026",
+  publishedAt: "2026-03",
+  Tag: ["Attack for Protection"],
+  link: "https://doi.org/10.1016/j.patcog.2025.112105"
+},
 ];

@@ -32,6 +32,7 @@ const searchInput = document.querySelector("#search-input");
 const paperGrid = document.querySelector("#paper-grid");
 const emptyState = document.querySelector("#empty-state");
 const viewStorageKey = `paper-view:${section}`;
+const initialSearch = new URLSearchParams(window.location.search).get("search") || "";
 let viewMode = localStorage.getItem(viewStorageKey) || "cards";
 
 paperGrid.classList.remove("paper-grid");
@@ -113,3 +114,8 @@ tagFilter.addEventListener("change", renderList);
 sortFilter.addEventListener("change", renderList);
 viewToggle.addEventListener("click", toggleViewMode);
 renderList();
+
+if (initialSearch) {
+  searchInput.value = initialSearch;
+  renderList();
+}

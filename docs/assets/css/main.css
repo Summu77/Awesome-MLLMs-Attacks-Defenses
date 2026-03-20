@@ -393,6 +393,21 @@ h3 {
   border: 1px solid rgba(31, 43, 60, 0.08);
 }
 
+.stat-card-link {
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease;
+}
+
+.stat-card-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(31, 43, 60, 0.1);
+  border-color: rgba(58, 93, 112, 0.16);
+  background: rgba(255, 255, 255, 0.94);
+}
+
 .stat-value {
   display: block;
   font-size: 1.7rem;
@@ -586,6 +601,21 @@ h3 {
   border-radius: var(--radius-sm);
   background: rgba(255, 255, 255, 0.76);
   border: 1px solid rgba(31, 43, 60, 0.06);
+}
+
+.institution-legend-link {
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease;
+}
+
+.institution-legend-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(31, 43, 60, 0.09);
+  border-color: rgba(58, 93, 112, 0.18);
+  background: rgba(255, 255, 255, 0.96);
 }
 
 .institution-legend-dot {
@@ -902,6 +932,14 @@ h3 {
   margin: 0;
   font-size: 0.9rem;
   line-height: 1.55;
+}
+
+.subsection-intro {
+  margin: 0.55rem 0 0;
+  max-width: 64ch;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  font-size: 0.97rem;
 }
 
 .paper-actions {

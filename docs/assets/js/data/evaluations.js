@@ -31,4 +31,22 @@ export const evaluations = [
   Tag: [],
   link: "https://proceedings.neurips.cc/paper_files/paper/2024/hash/586640cda3db2dc77349013dcefee456-Abstract-Datasets_and_Benchmarks_Track.html"
 },
+
+{
+  title: "NaturalBench: Evaluating Vision-Language Models on Natural Adversarial Samples",
+  institutions: ["Carnegie Mellon University"],
+  publication: "NeurIPS 2024",
+  publishedAt: "2024-10",
+  Tag: [],
+  link: "https://arxiv.org/abs/2410.14669"
+},
+{
+  title: "RedTeamCUA: Realistic Adversarial Testing of Computer-Use Agents in Hybrid Web-OS Environments",
+  institutions: ["The Ohio State University"],
+  publication: "ICLR 2026",
+  publishedAt: "2026-01",
+  Tag: ["Agent","Oral"],
+  link: "https://openreview.net/forum?id=yWwrgcBoK3"
+},
+
 ];

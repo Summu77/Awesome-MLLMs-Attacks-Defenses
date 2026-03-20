@@ -110,7 +110,11 @@ function normalizeMetaToken(value) {
 function isHighlightedPaper(paper) {
   const publication = normalizeMetaToken(paper.publication);
   const tagTokens = getTags(paper).map(normalizeMetaToken);
-  const hasOralOrSpotlight = publication.includes("spotlight") || /\boral\b/.test(publication);
+  const hasOralOrSpotlight =
+    publication.includes("spotlight") ||
+    /\boral\b/.test(publication) ||
+    tagTokens.includes("spotlight") ||
+    tagTokens.includes("oral");
   const hasHighlyCitedTag = tagTokens.includes("highly-cited") || tagTokens.includes("highly cited");
   return hasOralOrSpotlight || hasHighlyCitedTag;
 }

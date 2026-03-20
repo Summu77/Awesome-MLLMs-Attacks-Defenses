@@ -15,4 +15,12 @@ export const jailbreakDefenses = [
     Tag: [],
     link: "https://arxiv.org/abs/2410.09047"
   },
+  {
+  title: "Securing vision-language models with a robust encoder against jailbreak and adversarial attacks",
+  institutions: ["Southern Illinois University"],
+  publication: "BigData 2024",
+  publishedAt: "2024-09",
+  Tag: ["Adversarial Fine-tuning"],
+  link: "https://ieeexplore.ieee.org/abstract/document/10825099"
+},
 ];

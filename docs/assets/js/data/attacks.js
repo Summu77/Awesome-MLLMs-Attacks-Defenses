@@ -4,6 +4,7 @@ import { backdoorAttacks } from "./attacks/backdoor.js";
 import { membershipInferenceAttacks } from "./attacks/membership-inference.js";
 import { modelExtractionAttacks } from "./attacks/model-extraction.js";
 import { otherAttacks } from "./attacks/other.js";
+import { subtypeIntros } from "./subtype-intros.js";
 
 export const attackCategoryMeta = {
   adversarial: {
@@ -48,31 +49,37 @@ export const attackGroups = [
   {
     key: "adversarial",
     ...attackCategoryMeta.adversarial,
+    intro: subtypeIntros.attacks.adversarial,
     papers: adversarialAttacks
   },
   {
     key: "jailbreak",
     ...attackCategoryMeta.jailbreak,
+    intro: subtypeIntros.attacks.jailbreak,
     papers: jailbreakAttacks
   },
   {
     key: "backdoor",
     ...attackCategoryMeta.backdoor,
+    intro: subtypeIntros.attacks.backdoor,
     papers: backdoorAttacks
   },
   {
     key: "membershipInference",
     ...attackCategoryMeta.membershipInference,
+    intro: subtypeIntros.attacks.membershipInference,
     papers: membershipInferenceAttacks
   },
   {
     key: "modelExtraction",
     ...attackCategoryMeta.modelExtraction,
+    intro: subtypeIntros.attacks.modelExtraction,
     papers: modelExtractionAttacks
   },
   {
     key: "other",
     ...attackCategoryMeta.other,
+    intro: subtypeIntros.attacks.other,
     papers: otherAttacks
   }
 ];
