@@ -6,9 +6,8 @@ export function createPaperCard(paper, sectionLabel = "", extraClassName = "") {
     ? `<span class="${badgeClassName}">${sectionLabel}</span>`
     : `<span class="${badgeClassName}">Paper</span>`;
   const cardClassName = ["paper-card", extraClassName].filter(Boolean).join(" ");
-  const institutions = getInstitutions(paper);
+  const institution = getPrimaryInstitution(paper);
   const tags = getTags(paper);
-  const institutionLabel = institutions.length > 1 ? "Institutions" : "Institution";
   const tagBlock = tags.length
     ? `
         <div class="paper-tag-group">
@@ -28,7 +27,7 @@ export function createPaperCard(paper, sectionLabel = "", extraClassName = "") {
       </div>
       <div class="paper-front-copy">
         <h3 class="paper-title">${paper.title}</h3>
-        <p class="paper-institution"><strong>${institutionLabel}:</strong> ${institutions.join("; ")}</p>
+        <p class="paper-institution"><strong>Institution:</strong> ${institution}</p>
         <p class="paper-meta"><strong>Published:</strong> ${formatPublishedAt(paper.publishedAt)}</p>
         ${tagBlock}
       </div>
@@ -54,7 +53,7 @@ export function createPaperTable(papers, sectionLabel = "") {
         <thead>
           <tr>
             <th>Title</th>
-            <th>Institutions</th>
+            <th>Institution</th>
             <th>Published</th>
             <th>Publication</th>
             ${showTags ? "<th>Tags</th>" : ""}
@@ -314,6 +313,10 @@ function getInstitutions(paper) {
   return ["Unknown"];
 }
 
+function getPrimaryInstitution(paper) {
+  return getInstitutions(paper)[0] || "Unknown";
+}
+
 function getTags(paper) {
   if (Array.isArray(paper.Tag)) {
     return paper.Tag.filter(Boolean).map((item) => String(item).trim()).filter(Boolean);
@@ -343,7 +346,7 @@ function getTags(paper) {
 }
 
 function createPaperTableRow(paper, sectionLabel = "", extraClassName = "", options = {}) {
-  const institutions = getInstitutions(paper);
+  const institution = getPrimaryInstitution(paper);
   const tags = getTags(paper);
   const { showTags = false } = options;
   const rowClassName = ["paper-row", extraClassName].filter(Boolean).join(" ");
@@ -358,7 +361,7 @@ function createPaperTableRow(paper, sectionLabel = "", extraClassName = "", opti
   return `
     <tr class="${rowClassName}">
       <td class="paper-table-title">${paper.title}</td>
-      <td>${institutions.join("; ")}</td>
+      <td>${institution}</td>
       <td>${formatPublishedAt(paper.publishedAt)}</td>
       <td>${paper.publication}</td>
       ${tagCell}
@@ -389,7 +392,7 @@ function renderTableBucketContent(visiblePapers, hiddenPapers, sectionLabel) {
         <thead>
           <tr>
             <th>Title</th>
-            <th>Institutions</th>
+            <th>Institution</th>
             <th>Published</th>
             <th>Publication</th>
             ${showTags ? "<th>Tags</th>" : ""}

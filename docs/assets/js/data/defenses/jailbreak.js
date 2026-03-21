@@ -23,4 +23,12 @@ export const jailbreakDefenses = [
   Tag: ["Adversarial Fine-tuning"],
   link: "https://ieeexplore.ieee.org/abstract/document/10825099"
 },
+{
+  title: "From 'Sure' to 'Sorry': Detecting Jailbreak in Large Vision Language Model via JailNeurons",
+  institutions: ["Zhejiang University"],
+  publication: "ICLR 2026",
+  publishedAt: "2026-01",
+  Tag: [],
+  link: "https://openreview.net/forum?id=ofJaimOZBF"
+},
 ];
