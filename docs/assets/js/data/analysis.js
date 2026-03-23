@@ -15,4 +15,21 @@ export const analysis = [
   Tag: [],
   link: "https://arxiv.org/abs/2503.02199"
 },
+{
+  title: "Retention Score: Quantifying Jailbreak Risks for Vision Language Models",
+  institutions: ["The Chinese University of Hong Kong"],
+  publication: "AAAI 2025",
+  publishedAt: "2024-12",
+  Tag: [],
+  link: "https://arxiv.org/abs/2412.17544"
+},
+{
+  title: "JailbreakLens: Visual Analysis of Jailbreak Attacks Against Large Language Models",
+  institutions: ["Zhejiang University"],
+  publication: "TVCG 2025",
+  publishedAt: "2024-04",
+  Tag: [],
+  link: "https://arxiv.org/abs/2404.08793"
+},
+
 ];

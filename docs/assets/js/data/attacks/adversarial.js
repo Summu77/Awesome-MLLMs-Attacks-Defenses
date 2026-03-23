@@ -1,7 +1,7 @@
 export const adversarialAttacks = [
 {
   title: "Anyattack: Towards large-scale self-supervised adversarial attacks on vision-language models",
-  institutions: ["Hong Kong University of Science and Technology"],
+  institutions: ["Hong Kong University of Science and Technology","Beijing Jiaotong University","Fudan University","Singapore Management University","Peng Cheng Laboratory"],
   publication: "CVPR 2025",
   publishedAt: "2024-10",
   Tag: ["Black-box"],
@@ -9,7 +9,7 @@ export const adversarialAttacks = [
 },
 {
   title: "V-Attack: Targeting Disentangled Value Features for Controllable Adversarial Attacks on LVLMs",
-  institution: ["Institute of Computing Technology"],
+  institution: ["Institute of Computing Technology", "Chinese Academy of Sciences","Zhejiang University"],
   publication: "CVPR 2026",
   publishedAt: "2025-11",
   Tag: ["Black-box"],
@@ -25,7 +25,7 @@ export const adversarialAttacks = [
 },
 {
   title: "Adversarial Attacks against Closed-Source MLLMs via Feature Optimal Alignment",
-  institution: ["Nanyang Technological University"],
+  institution: ["Nanyang Technological University","MBZUAI","Sea AI Lab","University of Illinois Urbana-Champaign"],
   publication: "NeurIPS 2025",
   publishedAt: "2025-05",
   Tag: [],
@@ -33,7 +33,7 @@ export const adversarialAttacks = [
 },
 {
 title: "Towards Building Model/Prompt-Transferable Attackers against Large Vision-Language Models",
-institutions: ["Huazhong University of Science and Technology"],
+institutions: ["Huazhong University of Science and Technology","Wuhan University", "Nanyang Technological University", "Zhejiang Gongshang University", "Guangzhou University", "Lehigh University", "Peking University"],
 publication: "NeurIPS 2025",
 publishedAt: "2025-09",
 Tag: [],
@@ -41,7 +41,7 @@ link: "https://openreview.net/forum?id=TyW1V1KukG"
 },
 {
 title: "PA-Attack: Guiding Gray-Box Attacks on LVLM Vision Encoders with Prototypes and Attention",
-institutions: ["City University of Hong Kong"],
+institutions: ["City University of Hong Kong","The University of Sydney"],
 publication: "CVPR 2026",
 publishedAt: "2026-02",
 Tag: ["Gray-box"],
@@ -49,7 +49,7 @@ link: "https://arxiv.org/abs/2602.19418"
 },
 {
   title: "Fit the Distribution: Cross-Image/Prompt Adversarial Attacks on Multimodal Large Language Models",
-  institutions: ["Huazhong University of Science and Technology"],
+  institutions: ["Huazhong University of Science and Technology", "Wuhan University", "Zhejiang Gongshang University", "The Hong Kong University of Science and Technology", "Nanyang Technological University", "University of Warwick"],
   publication: "NeurIPS 2025",
   publishedAt: "2025-09",
   Tag: [],
@@ -57,7 +57,7 @@ link: "https://arxiv.org/abs/2602.19418"
 },
 {
   title: "X-Transfer Attacks: Towards Super Transferable Adversarial Attacks on CLIP",
-  institutions: ["The University of Melbourne"],
+  institutions: ["The University of Melbourne", "Singapore Management University", "Fudan University"],
   publication: "ICML 2025",
   publishedAt: "2025-05",
   Tag: ['UAP'],
@@ -65,7 +65,7 @@ link: "https://arxiv.org/abs/2602.19418"
 },
 {
   title: "Imperceptible Transfer Attack on Large Vision-Language Models",
-  institutions: ["Huazhong University of Science and Technology"],
+  institutions: ["Huazhong University of Science and Technology","Peking University","University of Liverpool"],
   publication: "ICASSP 2025",
   publishedAt: "2025-03",
   Tag: [],
@@ -73,7 +73,7 @@ link: "https://arxiv.org/abs/2602.19418"
 },
 {
   title: "Phi: Preference Hijacking in Multi-modal Large Language Models at Inference Time",
-  institutions: ["The Pennsylvania State University"],
+  institutions: ["The Pennsylvania State University","The University of North Carolina at Chapel Hill"],
   publication: "EMNLP 2025",
   publishedAt: "2025-09",
   Tag: [],
@@ -249,7 +249,7 @@ link: "https://arxiv.org/abs/2602.19418"
 },
 {
   title: "Towards Highly Transferable Vision-Language Attack via Semantic-Augmented Dynamic Contrastive Interaction",
-  institutions: ["Jiangnan University"],
+  institutions: ["Jiangnan University","University of Surrey"],
   publication: "CVPR 2026",
   publishedAt: "2026-03",
   Tag: [],

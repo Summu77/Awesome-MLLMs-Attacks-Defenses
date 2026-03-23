@@ -32,19 +32,11 @@ export const jailbreakAttacks = [
   link: "https://arxiv.org/abs/2402.08567"
 },
 {
-  title: "Retention Score: Quantifying Jailbreak Risks for Vision Language Models",
-  institutions: ["The Chinese University of Hong Kong"],
-  publication: "AAAI 2025",
-  publishedAt: "2024-12",
-  Tag: [],
-  link: "https://arxiv.org/abs/2412.17544"
-},
-{
   title: "FigStep: Jailbreaking Large Vision-Language Models via Typographic Visual Prompts",
   institutions: ["Tsinghua University","Zhongguancun Laboratory","Shandong Institute of Blockchain","Shandong University"],
   publication: "AAAI 2025",
   publishedAt: "2023-11",
-  Tag: ["Typographic/OCR-based","Single Image Modal"],
+  Tag: ["Typographic/OCR-based","Single Image Modal","Oral"],
   link: "https://arxiv.org/abs/2311.05608"
 },
 {
@@ -60,7 +52,7 @@ export const jailbreakAttacks = [
   institutions: ["Renmin University of China"],
   publication: "ECCV 2024",
   publishedAt: "2024-03",
-  Tag: ["Generative Attack","Single Image Modal"],
+  Tag: ["Generative Attack","Single Image Modal","Oral"],
   link: "https://arxiv.org/abs/2403.09792"
 },
 {
@@ -257,4 +249,142 @@ export const jailbreakAttacks = [
   Tag: [],
   link: "https://arxiv.org/abs/2602.01025"
 },
+{
+  title: "Steering Away from Harm: An Adaptive Approach to Defending Vision Language Model Against Jailbreaks",
+  institutions: ["University of Illinois Urbana-Champaign"],
+  publication: "CVPR 2025",
+  publishedAt: "2024-11",
+  Tag: [],
+  link: "https://arxiv.org/abs/2411.16721"
+},
+{
+  title: "Mind the Trojan Horse: Image Prompt Adapter Enabling Scalable and Deceptive Jailbreaking",
+  institutions: ["Sun Yat-Sen University"],
+  publication: "CVPR 2025",
+  publishedAt: "2025-04",
+  Tag: [],
+  link: "https://arxiv.org/abs/2504.05838"
+},
+{
+  title: "Not Just Text: Uncovering Vision Modality Typographic Threats in Image Generation Models",
+  institutions: ["The Hong Kong University of Science and Technology (Guangzhou)"],
+  publication: "CVPR 2025",
+  publishedAt: "2024-12",
+  Tag: [],
+  link: "https://arxiv.org/abs/2412.05538"
+},
+{
+  title: "Do We Really Need Curated Malicious Data for Safety Alignment in Multi-modal Large Language Models?",
+  institutions: ["University of Chinese Academy of Sciences"],
+  publication: "CVPR 2025",
+  publishedAt: "2025-04",
+  Tag: [],
+  link: "https://arxiv.org/abs/2504.10000"
+},
+{
+  title: "Heuristic-Induced Multimodal Risk Distribution Jailbreak Attack for Multimodal Large Language Models",
+  institutions: ["Shenzhen Campus of Sun Yat-Sen University"],
+  publication: "ICCV 2025",
+  publishedAt: "2024-12",
+  Tag: [],
+  link: "https://arxiv.org/abs/2412.05934"
+},
+
+//
+{
+  title: "Towards Visualization-of-Thought Jailbreak Attack against Large Visual Language Models",
+  institutions: ["Alibaba Group"],
+  publication: "NeurIPS 2025",
+  publishedAt: "2025-09",
+  Tag: [],
+  link: "https://openreview.net/forum?id=5P5YgohyBZ"
+},
+
+{
+  title: "Best-of-N Jailbreaking",
+  institutions: ["Speechmatics"],
+  publication: "NeurIPS 2025",
+  publishedAt: "2024-12",
+  Tag: [],
+  link: "https://arxiv.org/abs/2412.03556"
+},
+{
+  title: "Attention! Your Vision Language Model Could Be Maliciously Manipulated",
+  institutions: ["Huazhong University of Science and Technology"],
+  publication: "NeurIPS 2025",
+  publishedAt: "2025-05",
+  Tag: [],
+  link: "https://arxiv.org/abs/2505.19911"
+},
+//3.23
+{
+  title: "Adjacent Words, Divergent Intents: Jailbreaking Large Language Models via Task Concurrency",
+  institutions: ["CISPA Helmholtz Center for Information Security"],
+  publication: "NeurIPS 2025",
+  publishedAt: "2025-10",
+  Tag: ["Text"],
+  link: "https://arxiv.org/abs/2510.21189"
+}, // Interweave the two tasks at the word level, then jailbreak.
+
+{
+  title: "When LLM Meets DRL: Advancing Jailbreaking Efficiency via DRL-guided Search",
+  institutions: ["Purdue University"],
+  publication: "NeurIPS 2024",
+  publishedAt: "2024-06",
+  Tag: ["Text"],
+  link: "https://arxiv.org/abs/2406.08705"
+},
+
+{
+  title: "FlipAttack: Jailbreak LLMs via Flipping",
+  institutions: ["National University of Singapore"],
+  publication: "ICML 2025",
+  publishedAt: "2024-10",
+  Tag: ["Text", "Highly-cited"],
+  link: "https://arxiv.org/abs/2410.02832"
+},// Reverse the harmful prompt words before asking again
+
+{
+  title: "Weak-to-Strong Jailbreaking on Large Language Models",
+  institutions: ["Carnegie Mellon University"],
+  publication: "ICML 2025",
+  publishedAt: "2024-01",
+  Tag: ["Text", "Highly-cited"],
+  link: "https://arxiv.org/abs/2401.17256"
+}, //Use safe and unsafe small models to differentially adjust the large model’s output distribution probabilities.
+
+{
+  title: "Jailbreaking Leading Safety-Aligned LLMs with Simple Adaptive Attacks",
+  institutions: ["EPFL"],
+  publication: "ICLR 2025",
+  publishedAt: "2024-04",
+  Tag: ["Text", "Highly-cited"],
+  link: "https://arxiv.org/abs/2404.02151"
+}, // Prompt template + Random Search + Self-transfer
+{
+  title: "Exploring Jailbreak Attacks on LLMs through Intent Concealment and Diversion",
+  institutions: ["Henan University"],
+  publication: "ACL 2025 findings",
+  publishedAt: "2025-05",
+  Tag: ["Text"],
+  link: "https://arxiv.org/abs/2505.14316"
+},// Multi-step recovery + semantic expansion + inference restoration
+
+{
+  title: "M2S: Multi-turn to Single-turn jailbreak in Red Teaming for LLMs",
+  institutions: ["AIM Intelligence","University of Seoul"],
+  publication: "ACL 2025",
+  publishedAt: "2025-03",
+  Tag: [],
+  link: "https://arxiv.org/abs/2503.04856"
+}, // Directly stitch jailbreak attacks from multi‑turn dialogues into a single‑turn dialogue.
+
+{
+  title: "Guiding not Forcing: Enhancing the Transferability of Jailbreaking Attacks on LLMs via Removing Superfluous Constraints",
+  institutions: ["Tsinghua University"],
+  publication: "ACL 2025",
+  publishedAt: "2025-02",
+  Tag: [],
+  link: "https://arxiv.org/abs/2503.01865"
+},//Relax the restrictions on optimization methods
 ]; 

@@ -31,4 +31,20 @@ export const jailbreakDefenses = [
   Tag: [],
   link: "https://openreview.net/forum?id=ofJaimOZBF"
 },
+{
+  title: "Understanding and Rectifying Safety Perception Distortion in VLMs",
+  institutions: ["The Pennsylvania State University"],
+  publication: "NeurIPS 2025",
+  publishedAt: "2025-02",
+  Tag: [],
+  link: "https://arxiv.org/abs/2502.13095"
+},
+{
+  title: "Failures to Find Transferable Image Jailbreaks Between Vision-Language Models",
+  institutions: ["MIT"],
+  publication: "NeurIPS 2024",
+  publishedAt: "2024-07",
+  Tag: [],
+  link: "https://arxiv.org/abs/2407.15211"
+},
 ];
