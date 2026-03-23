@@ -274,14 +274,6 @@ export const jailbreakAttacks = [
   link: "https://arxiv.org/abs/2412.05538"
 },
 {
-  title: "Do We Really Need Curated Malicious Data for Safety Alignment in Multi-modal Large Language Models?",
-  institutions: ["University of Chinese Academy of Sciences"],
-  publication: "CVPR 2025",
-  publishedAt: "2025-04",
-  Tag: [],
-  link: "https://arxiv.org/abs/2504.10000"
-},
-{
   title: "Heuristic-Induced Multimodal Risk Distribution Jailbreak Attack for Multimodal Large Language Models",
   institutions: ["Shenzhen Campus of Sun Yat-Sen University"],
   publication: "ICCV 2025",
@@ -289,8 +281,7 @@ export const jailbreakAttacks = [
   Tag: [],
   link: "https://arxiv.org/abs/2412.05934"
 },
-
-//
+// Maliciously decomposing into images and text, injecting image prompts and generating related content, guiding text completion with malicious assumptions.
 {
   title: "Towards Visualization-of-Thought Jailbreak Attack against Large Visual Language Models",
   institutions: ["Alibaba Group"],
@@ -299,7 +290,7 @@ export const jailbreakAttacks = [
   Tag: [],
   link: "https://openreview.net/forum?id=5P5YgohyBZ"
 },
-
+// Multimodal hybrid reasoning problem
 {
   title: "Best-of-N Jailbreaking",
   institutions: ["Speechmatics"],
@@ -307,7 +298,7 @@ export const jailbreakAttacks = [
   publishedAt: "2024-12",
   Tag: [],
   link: "https://arxiv.org/abs/2412.03556"
-},
+}, // audio > text > vision (random perturbation)
 {
   title: "Attention! Your Vision Language Model Could Be Maliciously Manipulated",
   institutions: ["Huazhong University of Science and Technology"],
@@ -315,7 +306,7 @@ export const jailbreakAttacks = [
   publishedAt: "2025-05",
   Tag: [],
   link: "https://arxiv.org/abs/2505.19911"
-},
+}, // PGD + Adam + Introduce differentiable transformations to replace hard truncation.
 //3.23
 {
   title: "Adjacent Words, Divergent Intents: Jailbreaking Large Language Models via Task Concurrency",
@@ -333,7 +324,7 @@ export const jailbreakAttacks = [
   publishedAt: "2024-06",
   Tag: ["Text"],
   link: "https://arxiv.org/abs/2406.08705"
-},
+}, // Use reinforcement learning to train a model to generate one of five edits, then hand it to the model for further refinement.
 
 {
   title: "FlipAttack: Jailbreak LLMs via Flipping",
@@ -375,16 +366,25 @@ export const jailbreakAttacks = [
   institutions: ["AIM Intelligence","University of Seoul"],
   publication: "ACL 2025",
   publishedAt: "2025-03",
-  Tag: [],
+  Tag: ["Text"],
   link: "https://arxiv.org/abs/2503.04856"
 }, // Directly stitch jailbreak attacks from multi‑turn dialogues into a single‑turn dialogue.
-
+   // Numbered lists, bullet points, Python code style
 {
   title: "Guiding not Forcing: Enhancing the Transferability of Jailbreaking Attacks on LLMs via Removing Superfluous Constraints",
   institutions: ["Tsinghua University"],
   publication: "ACL 2025",
   publishedAt: "2025-02",
-  Tag: [],
+  Tag: ["Text"],
   link: "https://arxiv.org/abs/2503.01865"
 },//Relax the restrictions on optimization methods
+{
+  title: "Foot-In-The-Door: A Multi-turn Jailbreak for LLMs",
+  institutions: ["University of Notre Dame","Purdue University","Pennsylvania State University"],
+  publication: "EMNLP 2025",
+  publishedAt: "2025-02",
+  Tag: [],
+  link: "https://arxiv.org/abs/2502.19820"
+}, //Foot-In-The-Door + Determine whether to add guidance or modify the wording.
+
 ]; 

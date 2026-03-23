@@ -31,5 +31,12 @@ export const analysis = [
   Tag: [],
   link: "https://arxiv.org/abs/2404.08793"
 },
-
+{
+  title: "Do We Really Need Curated Malicious Data for Safety Alignment in Multi-modal Large Language Models?",
+  institutions: ["University of Chinese Academy of Sciences"],
+  publication: "CVPR 2025",
+  publishedAt: "2025-04",
+  Tag: ["Jailbreak"],
+  link: "https://arxiv.org/abs/2504.10000"
+}, // Alignment data is NOT important, just set some randomly "don’t answer".
 ];
